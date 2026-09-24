@@ -510,81 +510,37 @@ class _ItemScannedListScreenState extends State<ItemScannedListScreen> {
                                                       Spacer(),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsets
-                                                                    .only(
-                                                                right: 8.0),
+                                                            const EdgeInsets.only(right: 8.0),
                                                         child: ElevatedButton(
-                                                          style: ElevatedButton
-                                                              .styleFrom(
-                                                                  primary: Colors
-                                                                          .yellow[
-                                                                      700]),
+                                                          style: ElevatedButton.styleFrom(primary: Colors.yellow[700]),
                                                           child: Row(
                                                             children: [
-                                                              Icon(
-                                                                  CupertinoIcons
-                                                                      .pencil),
+                                                              Icon(CupertinoIcons.pencil),
                                                               Text("Edit"),
                                                             ],
                                                           ),
                                                           onPressed: () async {
-                                                            if (_items2[index][
-                                                                    'exported'] !=
-                                                                'EXPORTED') {
+                                                            if (_items2[index]['exported'] != 'EXPORTED') {
                                                               customLogicalModal(
                                                                 context,
-                                                                Text(
-                                                                    "Are you sure you want to edit this item?"),
-                                                                () => Navigator
-                                                                    .pop(
-                                                                        context),
+                                                                Text("Are you sure you want to edit this item?"),
+                                                                () => Navigator.pop(context),
                                                                 () async {
-                                                                  Navigator.pop(
-                                                                      context);
+                                                                  Navigator.pop(context);
                                                                   await updateItemModal(
                                                                     context,
                                                                     _sqfliteDBHelper,
                                                                     "[LOGIN][Audit scan ID to update scanned item quantity.]",
-                                                                    _items2[index]
-                                                                            [
-                                                                            'id']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'description']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'desc']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'barcode']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'itemcode']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'uom']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'lot_number']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'expiry']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'qty']
-                                                                        .toString(),
-                                                                    _items2[index]
-                                                                            [
-                                                                            'conqty']
-                                                                        .toString(),
+                                                                    _items2[index]['id'].toString(),
+                                                                    _items2[index]['description'].toString(),
+                                                                    _items2[index]['desc'].toString(),
+                                                                    _items2[index]['barcode'].toString(),
+                                                                    _items2[index]['itemcode'].toString(),
+                                                                    _items2[index]['uom'].toString(),
+                                                                    _items2[index]['lot_number'].toString(),
+                                                                    _items2[index]['expiry'].toString(),
+                                                                    _items2[index]['qty'].toString(),
+                                                                    _items2[index]['conqty'].toString(),
                                                                   );
                                                                   _refreshItemList();
                                                                 },
